@@ -1,0 +1,21 @@
+name: "Cloudflare DNS tool"
+description: "GitHub Action to create/update a DNS records in Cloudflare"
+author: "Yuri Zinkovets"
+inputs:
+  cloudflare_api_token:
+    description: "Cloudflare API Token"
+    required: true
+  domain:
+    description: "Full domain name (e.g., sub.example.com)"
+    required: true
+  target:
+    description: "Target value for a record (e.g., target.k8s.com)"
+    required: true
+
+runs:
+  using: "docker"
+  image: "docker://yzinkovets/github-actions-cloudflare-dns:v1"
+
+branding:
+  icon: "cloud"
+  color: "blue"
